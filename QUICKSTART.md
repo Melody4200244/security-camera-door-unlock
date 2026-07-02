@@ -1,4 +1,4 @@
-# Quick Start Guide
+# Quick Start demo
 
 Get your door lock system running in minutes!
 
