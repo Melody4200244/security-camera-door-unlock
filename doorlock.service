@@ -1,0 +1,22 @@
+[Unit]
+Description=Automatic Door Lock System with Facial Recognition
+After=network.target sound.target
+
+[Service]
+Type=simple
+User=guillaume
+Group=guillaume
+WorkingDirectory=/home/guillaume/serrure_automatique
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/guillaume/.Xauthority
+ExecStart=/usr/bin/python3 /home/guillaume/serrure_automatique/app.py
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Ensure GPIO access
+SupplementaryGroups=gpio video
+
+[Install]
+WantedBy=multi-user.target
